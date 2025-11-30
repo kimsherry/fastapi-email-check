@@ -81,10 +81,10 @@ API 학습용이나 다른 서비스에 통합하기 좋습니다.
 ```
 ### 응답:
 ```json
-{
+  {
   "valid": false,
   "reason": "blocked domain"
-}
+  }
 ```
 
 ### 잘못된형식
