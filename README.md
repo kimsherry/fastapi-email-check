@@ -18,14 +18,14 @@ API 학습용이나 다른 서비스에 통합하기 좋습니다.
 
 ### 1. 저장소 생성
 
-'''bash
+'''
   git clone https://github.com/username/email-check-api.git
   cd email-validator-api
 '''
 
 ### 2. 가상환경 생성 (선택 사항)
 
-'''bash
+'''
   python -m venv env
   source env/bin/activate  # Linux / MacOS
   env\Scripts\activate     # Windows
@@ -33,7 +33,7 @@ API 학습용이나 다른 서비스에 통합하기 좋습니다.
 
 ### 3. 패키지 설치
 
-'''bash
+'''
   pip install -r requirements.txt
 '''
 
@@ -43,7 +43,7 @@ API 학습용이나 다른 서비스에 통합하기 좋습니다.
 
 ### API 서버에서 실행
 
-'''bash
+'''
   uvicorn app.main:app --reload
 '''
 
@@ -54,7 +54,7 @@ API 학습용이나 다른 서비스에 통합하기 좋습니다.
 ### 요청
 입력한 이메일이 올바른 형식인지, 차단 도메인인지 확인합니다.
 
-'''pgsql
+'''
   GET /validate/email?value=<email>
 '''
 
@@ -64,11 +64,11 @@ API 학습용이나 다른 서비스에 통합하기 좋습니다.
 
 ### 정상이메일
 
-'''bash
+'''
   GET /validate/email?value=test@unji.com
 '''
 ### 응답:
-'''json
+'''
   {
   "valid": true,
   "reason": "ok"
@@ -76,11 +76,11 @@ API 학습용이나 다른 서비스에 통합하기 좋습니다.
 '''
 
 ### 차단 도메인
-'''sql
+'''
   GET /validate/email?value=user@test.com
 '''
 ### 응답:
-'''json
+'''
 {
   "valid": false,
   "reason": "blocked domain"
@@ -89,12 +89,12 @@ API 학습용이나 다른 서비스에 통합하기 좋습니다.
 
 ### 잘못된형식
 
-'''pgsql
+'''
   GET /validate/email?value=invalid-email
 '''
 
 ### 응답:
-'''json
+'''
 {
   "valid": false,
   "reason": "invalid format"
