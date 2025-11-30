@@ -49,4 +49,4 @@ async def validate_email(request: Request, value: str):
         return {"valid": False, "reason": "blocked domain"}
 
     write_log(ip, value, "OK")
-    return {"valid": True, "reason": "OK"}
+    return {"valid": True, "reason": "ok"}
